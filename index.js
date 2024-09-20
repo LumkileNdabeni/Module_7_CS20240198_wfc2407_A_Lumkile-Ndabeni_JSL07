@@ -15,13 +15,15 @@ document.addEventListener('DOMContentLoaded', function () {
       const personalMessageInput = document.getElementById('personalMessage');
       const courseNameInput = document.getElementById('courseName');
 
+      // Store the values from the input fields
       const studentName = studentNameInput.value;
       const personalMessage = personalMessageInput.value;
       const courseName = courseNameInput ? courseNameInput.value : "a course"; // Fallback to "a course" if no input
 
+      // Check if required fields are filled out
       if (studentName.trim() === '' || personalMessage.trim() === '') {
-          alert('Please fill in all fields');
-          return;
+          alert('Please fill in all fields'); // Alert if fields are empty
+          return; // Exit the function early
       }
 
       // Generate certificate content dynamically
@@ -42,11 +44,11 @@ document.addEventListener('DOMContentLoaded', function () {
       // Clear the form inputs
       studentNameInput.value = '';
       personalMessageInput.value = '';
-      if (courseNameInput) courseNameInput.value = '';
+      if (courseNameInput) courseNameInput.value = ''; // Clear course name input if it exists
   });
 
   // Close the modal when the close button is clicked
   closeModal.addEventListener('click', function () {
-      modal.style.display = 'none';
+      modal.style.display = 'none'; // Hide the modal
   });
 });
